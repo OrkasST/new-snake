@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Prototype</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+
+  <script src="scripts/update-meals.js" defer></script>
+  <script src="scripts/upgrade-menu.js" defer></script>
+  <script src="scripts/script.js" defer></script>
+</head>
+<body>
+  <canvas class="firstCanvas" id="fCanv"></canvas>
+  <div class="buttons _hidden">
+      <button class="button" id="leftButton">left</button>
+      <button class="button" id="upButton">up</button>
+      <button class="button" id="downButton">down</button>
+      <button class="button" id="rightButton">right</button>
+			<button class="button attack" id="attackButton">attack</button>
+  </div>
+	<br>
+			<button class="upgrade" id="lvlUpBtn">Upgrade</button>
+	<br>
+  <div class="info">
+		Meals to size up: <b id="currentApplesEatenAmmount">0</b> / <b id="applesToSizeUpAmmount">0</b>
+  </div>
+<div id="debug_log"></div>
+
+	<div class="upgrade_popUp _hidden">
+		<nav class="navig">
+			<ul class="menu">
+				<li class="_pressed">Player</li>
+				<li>Statistic</li>
+				<li>Settings</li>
+			</ul>
+		</nav>
+		<div class="content">
+			<div class="page" id="player">
+				<div>
+					Poison: <b id="poison">1</b>
+					<button id="plus_poison">+</button>
+				</div>
+				<div>
+					Scales: <b id="scales">1</b>
+					<button id="plus_scales">+</button>
+				</div>
+				<br>
+				<div>
+					Current upgrade points: <b id="points">1</b>
+					<br>
+					<button class="confirm_upgrade">Confirm</button>
+				</div>
+			</div>
+			<div class="page _hidden" id="statistic">
+				<br>
+				Total apples eaten: <b id="score">0</b>
+				<br>
+				Total mushrooms eaten: <b id="mushroomScore">0</b>
+				<br>
+				Total insects eaten: <b id="insectsScore">0</b>
+				<br>
+			</div>
+		</div>
+		</div>
+</body>
+</html>
