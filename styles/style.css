@@ -101,6 +101,12 @@
 .confirm_upgrade {
     background: royalblue;
 }
+
+.close_button {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+}
   /*
   @font-face {
     font-family: 'NewTegomin';
