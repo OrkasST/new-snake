@@ -24,46 +24,50 @@
 		<button class="button attack" id="attackButton">attack</button>
   </div>
 	<br>
-			<button class="upgrade" id="lvlUpBtn">Upgrade</button>
+		<button class="upgrade" id="menuBtn">Menu</button>
 	<br>
   <div class="info">
-		Meals to size up: <b id="currentApplesEatenAmmount">0</b> / <b id="applesToSizeUpAmmount">0</b>
+		<i class="_lang" id="meals-to-sizeup">Meals to size up</i>: <b id="currentApplesEatenAmmount">0</b> / <b id="applesToSizeUpAmmount">0</b>
   </div>
 <div id="debug_log"></div>
 
 	<div class="upgrade_popUp _hidden">
 		<nav class="navig">
 			<ul class="menu">
-				<li class="_pressed">Player</li>
-				<li>Statistic</li>
-				<li>Settings</li>
+				<li class="_pressed" id="menu-player">Player</li>
+				<li id="menu-statistic">Statistic</li>
+				<li id="menu-settings">Settings</li>
 			</ul>
 		</nav>
 		<div class="content">
 			<div class="page" id="player">
 				<div>
-					Poison: <b id="poison">1</b>
+					<i class="_lang" id="menu-poison">Poison</i>: <b id="poison">1</b>
 					<button id="plus_poison">+</button>
 				</div>
 				<div>
-					Scales: <b id="scales">1</b>
+					<i class="_lang" id="menu-scales">Scales</i>: <b id="scales">1</b>
 					<button id="plus_scales">+</button>
 				</div>
 				<br>
 				<div>
-					Current upgrade points: <b id="points">1</b>
+					<i class="_lang" id="upgrade-points">Current upgrade points</i>: <b id="points">1</b>
 					<br>
-					<button class="confirm_upgrade">Confirm</button>
+					<button class="confirm_upgrade" >Confirm</button>
 				</div>
 			</div>
 			<div class="page _hidden" id="statistic">
 				<br>
-				Total apples eaten: <b id="score">0</b>
+				<i class="_lang" id="apples-count">Total apples eaten</i>: <b id="score">0</b>
 				<br>
-				Total mushrooms eaten: <b id="mushroomScore">0</b>
+				<i class="_lang" id="mushrooms-count">Total mushrooms eaten</i>: <b id="mushroomScore">0</b>
 				<br>
-				Total insects eaten: <b id="insectsScore">0</b>
+				<i class="_lang" id="insects-count">Total insects eaten</i>: <b id="insectsScore">0</b>
 				<br>
+			</div>
+			<div class="page _hidden" id="settings">
+				<button class="_selected" id="engBtn">En</button>
+				<button id="ruBtn">Ru</button>
 			</div>
 		</div>
 		</div>

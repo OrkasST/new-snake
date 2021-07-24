@@ -114,3 +114,10 @@
     border-bottom: solid #444 1px;
     background: #444;
 }
+._lang {
+    font-style: normal;
+}
+
+._selected {
+    border: solid rgb(173, 216, 17);
+}

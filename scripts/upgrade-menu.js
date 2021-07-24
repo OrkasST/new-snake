@@ -1,4 +1,4 @@
-const upgradeButton = document.getElementById('lvlUpBtn');
+const menuBtn = document.getElementById('menuBtn');
 const upgradeList = document.querySelector('.upgrade_popUp');
 const confirmUpgrade = document.querySelector('.confirm_upgrade');
 const upgradePoints = document.getElementById('points');
@@ -10,7 +10,7 @@ const plusScalesLvl = document.getElementById('plus_scales');
 const list = document.querySelectorAll('.menu li');
 const pages = document.querySelectorAll('.page');
 
-upgradeButton.addEventListener('click', () => {
+menuBtn.addEventListener('click', () => {
     lastDirection = direction;
     direction = 'stand';
     points = player.length - 1;
