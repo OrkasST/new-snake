@@ -28,67 +28,14 @@ enBtn.addEventListener('click', (e) => {
     ruBtn.classList.remove('_selected');
     enBtn.classList.add('_selected');
     lang = 'en';
+    displayText();
 });
 ruBtn.addEventListener('click', (e) => {
     ruBtn.classList.add('_selected');
     enBtn.classList.remove('_selected');
     lang = 'ru';
+    displayText();
 });
-
-/*
-leftBtn_lng
-upBtn_lng
-rightBtn_lng
-downBtn_lng
-attackBtn_lng
-menuBtn_lng
-mealsToSizeUp_lng
-menu_player_lng
-menu_statistic_lng
-menu_settings_lng
-menu_poison_lng
-menu_scales_lng
-upgrade_points_lng
-apples_count_lng
-mushrooms_count_lng
-insects_count_lng
-
-leftBtn
-upBtn
-rightBtn
-downBtn
-attackBtn
-menuBtn
-mealsToSizeUp
-menu_player
-menu_statistic
-menu_settings
-menu_poison
-menu_scales
-upgrade_points
-apples_count
-mushrooms_count
-insects_count
-
-'leftBtn' : '',
-        'upBtn' : '',
-        'rightBtn' : '',
-        'downBtn' : '',
-        'attackBtn' : '',
-        'menuBtn' : '',
-        'mealsToSizeUp' : '',
-        'menu_player' : '',
-        'menu_statistic' : '',
-        'menu_settings' : '',
-        'menu_poison' : '',
-        'menu_scales' : '',
-        'upgrade_points' : '',
-        'apples_count' : '',
-        'mushrooms_count' : '',
-        'insects_count' : ''
-
-.innerText = langText[lang][''];
-*/
 
 const langText = {
     'ru' : {
@@ -149,4 +96,3 @@ function displayText() {
 }
 
 document.addEventListener("DOMContentLoaded", displayText);
-    // displayText();
