@@ -92,22 +92,22 @@ insects_count
 
 const langText = {
     'ru' : {
-        'leftBtn' : '',
-        'upBtn' : '',
-        'rightBtn' : '',
-        'downBtn' : '',
-        'attackBtn' : '',
-        'menuBtn' : '',
-        'mealsToSizeUp' : '',
-        'menu_player' : '',
-        'menu_statistic' : '',
-        'menu_settings' : '',
-        'menu_poison' : '',
-        'menu_scales' : '',
-        'upgrade_points' : '',
-        'apples_count' : '',
-        'mushrooms_count' : '',
-        'insects_count' : ''
+        'leftBtn' : 'влево',
+        'upBtn' : 'вверх',
+        'rightBtn' : 'вправо',
+        'downBtn' : 'вниз',
+        'attackBtn' : 'атака',
+        'menuBtn' : 'Меню',
+        'mealsToSizeUp' : 'Пища для роста',
+        'menu_player' : 'Игрок',
+        'menu_statistic' : 'Статистика',
+        'menu_settings' : 'Настройки',
+        'menu_poison' : 'Яд',
+        'menu_scales' : 'Чешуя',
+        'upgrade_points' : 'Текущие очки улучшения',
+        'apples_count' : 'Всего яблок съедено',
+        'mushrooms_count' : 'Всего грибов съедено',
+        'insects_count' : 'Всего насекомых съедено'
     },
     'en' : {
         'leftBtn' : 'left',
