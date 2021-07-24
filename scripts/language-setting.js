@@ -19,7 +19,7 @@ const apples_count_lng = document.getElementById('apples-count');
 const mushrooms_count_lng = document.getElementById('mushrooms-count');
 const insects_count_lng = document.getElementById('insects-count');
 
-let lang = 'en';
+let lang = 'ru';
 
 const enBtn = document.getElementById('engBtn');
 const ruBtn = document.getElementById('ruBtn');
