@@ -21,16 +21,21 @@
 .attack {
     background: #FF7070;
 }
-.upgrade {
+.menu-button {
     position: relative;
     left: 50%;
     top: 2rem;
     transform: translate(-50%);
-    background: #f59;
+    background: rgb(6, 0, 88);
+    color: rgb(142, 255, 249);
     width: auto;
     height: auto;
     padding: 0.5rem;
     font-size: 1.5rem;
+    cursor: pointer;
+
+    border: solid 2px #3264c0;
+    border-radius: 0.6rem 0;
 }
 
 .info {
@@ -80,6 +85,9 @@
     padding-left: 0.5rem;
     padding-right: 0.5rem;
 }
+.menu li:not(._pressed):hover {
+    border-bottom: solid 4px #e0e40e;
+}
 
 .content {
     position: absolute;
@@ -99,7 +107,19 @@
 }
 
 .confirm_upgrade {
-    background: royalblue;
+    background: #444;
+    border: solid 2px rgba(238, 255, 81, 0.8);
+    color:rgba(238, 255, 81, 0.8);
+
+    width: 5rem;
+    height: 2rem;
+    margin-top: 1.5rem;
+
+    cursor: pointer;
+}
+
+.confirm_upgrade:hover {
+    transform: scale(1.1);
 }
 
 .close_button {
@@ -119,6 +139,9 @@
 ._pressed {
     border-bottom: solid #444 1px;
     background: #444;
+
+    color:rgba(180, 196, 44, 0.8);
+    text-decoration: underline;
 }
 ._lang {
     font-style: normal;
