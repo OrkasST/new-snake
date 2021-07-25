@@ -131,11 +131,18 @@ let scales = 1;
 let health = 8 + player.length - 1;
 let currentHealth = health;
 
+document.addEventListener("DOMContentLoaded", () => {
+  displayMenu(ctx, Cnv);
+});
+
 function game() {
   update();
   render();
 }
-loop = setInterval(game, intervalSpeed);
+
+function start() {
+  loop = setInterval(game, intervalSpeed);
+}
 
 function render() {
   ctx.clearRect(0, 0, width, height + toolBar);
