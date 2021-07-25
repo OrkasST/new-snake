@@ -11,5 +11,15 @@ function displayMenu() {
     ctx.closePath();
 }
 
+document.addEventListener('click', (e) => {
+    if (e.target == Cnv &&
+         e.offsetX >= startBtn.x &&
+         e.offsetX <= startBtn.x + startBtn.width &&
+         e.offsetY >= startBtn.y &&
+         e.offsetY <= startBtn.height) {
+        
+            start();
+    }
+});
 
 //document.addEventListener("DOMContentLoaded", displayMenu);
