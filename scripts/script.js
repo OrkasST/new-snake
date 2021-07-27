@@ -292,6 +292,7 @@ function drawToolBar() {
   ctx.beginPath();
   ctx.moveTo(0, height);
   ctx.lineTo(width, height);
+  ctx.strokeStyle = "#000000";
   ctx.stroke();
   ctx.closePath();
   drawPlayerHealth();
@@ -300,7 +301,7 @@ function drawToolBar() {
 function drawPlayerHealth() {
   ctx.beginPath();
   ctx.fillStyle = '#FF0000';
-  ctx.strokeColor = '#000000';
+  ctx.strokeStyle = '#000000';
   ctx.strokeRect(4, height + 14, 4 * health +1, 11);
   ctx.fillRect(5, height + 15, 4 * currentHealth, 10);
   ctx.closePath();
@@ -341,12 +342,6 @@ function battleCheck(enemy) {
   if (currentHealth <= 0) {
     currentApplesEaten = 0;
     player.splice(2);
-    // player = [{
-    //   x: ((() => insects[enemy].x + 40 < width ? insects[enemy] + 40 : 20)()),
-    //   y: ((() => insects[enemy].y + 40 < height ? insects[enemy] + 40 : 20)()),
-    //   size: 20,
-    //   direction: 'stand'
-    // }];
     injured = false;
   }
   if (enemyHealth <= 0) {
@@ -366,10 +361,6 @@ function createApple() {
 }
 
 function drawApple() {
-  // ctx.beginPath();
-  // ctx.fillStyle = '#D50200';
-  // ctx.fillRect(apple.x, apple.y, apple.size, apple.size);
-  // ctx.closePath();
   ctx.drawImage(apple_img, apple.x, apple.y);
 }
 
@@ -383,10 +374,6 @@ function createMushroom() {
 }  
 
 function drawMushroom() {
-  // ctx.beginPath();
-  // ctx.fillStyle = '#70001F';
-  // ctx.fillRect(mushroom.x, mushroom.y, mushroom.size, mushroom.size);
-  // ctx.closePath();
   ctx.drawImage(mushroom_img, mushroom.x, mushroom.y);
 }
 
@@ -409,21 +396,27 @@ function createInsect(name) {
   player.forEach(el => { if (el.x == insects[name].x && el.y == insects[name].y) createInsect(name) });
   
   insects[name].eaten = false;
-		enemyHealth = insects[name].health;
+	enemyHealth = insects[name].health;
   }
   
   function drawInsect(name) {
-    //ctx.beginPath();
-    //ctx.fillStyle = insects[name].color;
-    //ctx.fillRect(insects[name].x, insects[name].y, insects[name].width, insects[name].height);
-    //ctx.closePath();
     ctx.drawImage(insects[name].image, insects[name].x, insects[name].y);
 		ctx.beginPath();
-		ctx.strokeColor = '#000000';
-		ctx.fillStyle = '#FF0000';
+		ctx.strokeStyle = '#000000';
+		ctx.fillStyle = enemyDanger(insects[name]);
 		ctx.strokeRect(insects[name].x - 5, insects[name].y - 8, 3*insects[name].health+1, 5);
 		ctx.fillRect(insects[name].x - 4, insects[name].y - 7, 3*enemyHealth, 3);
 		ctx.closePath();
+  }
+
+  function enemyDanger(enemy) {
+    if (enemy.attack - (scales * 2) >= health) {
+      return '#17002F';
+    } else if (enemy.attack - (scales * 2) >= health / 2) {
+      return '#24004B';
+    } else {
+      return '#FF0000';
+    }
   }
 
   document.addEventListener('click', (e) => {
