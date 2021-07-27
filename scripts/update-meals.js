@@ -1,6 +1,6 @@
 function updateMealsAvailable() {
-    if (!mushroom.available && sizeUps >= 2) {
-      mushroom.available = true;
+    if (!food.mushroom.available && sizeUps >= 2) {
+      food.mushroom.available = true;
       ateMushroom = true;
     }
     if (!insects.ant.available && sizeUps >= 5) {
