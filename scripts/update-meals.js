@@ -2,6 +2,7 @@ function updateMealsAvailable() {
     if (!food.mushroom.available && sizeUps >= 2) {
       food.mushroom.available = true;
       ateMushroom = true;
+      availableFood.push('mushroom');
     }
     if (!insects.ant.available && sizeUps >= 5) {
       insects.ant.available = true;

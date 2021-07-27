@@ -65,15 +65,22 @@ let food = {
     x: 0,
     y: 80,
     size: 20,
-    available: true
+    image: apple_img,
+    available: true,
+    eaten: false
   },
   mushroom : {
     x: 0,
     y: 0,
     size: 18,
-    available: false
+    image: mushroom_img,
+    available: false,
+    eaten: false
   }
 }
+let availableFood = [
+  'apple'
+];
 
 let insects = {
   ant: {
@@ -362,7 +369,7 @@ function createApple() {
 }
 
 function drawApple() {
-  ctx.drawImage(apple_img, food.apple.x, food.apple.y);
+  ctx.drawImage(food.apple.image, food.apple.x, food.apple.y);
 }
 
 function createMushroom() {
@@ -375,7 +382,7 @@ function createMushroom() {
 }  
 
 function drawMushroom() {
-  ctx.drawImage(mushroom_img, food.mushroom.x, food.mushroom.y);
+  ctx.drawImage(food.mushroom.image, food.mushroom.x, food.mushroom.y);
 }
 
 function updateInsectName() {
