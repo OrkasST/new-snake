@@ -59,21 +59,22 @@ let insectName = '';
 let insectExists = false;
 let enemyHealth;
 let injured = false;
-  
-let apple = {
-  x: 0,
-  y: 80,
-  size: 20,
-  available: true
+
+let food = {
+  apple : {
+    x: 0,
+    y: 80,
+    size: 20,
+    available: true
+  },
+  mushroom : {
+    x: 0,
+    y: 0,
+    size: 18,
+    available: false
+  }
 }
 
-let mushroom = {
-  x: 0,
-  y: 0,
-  size: 18,
-  available: false
-}
- 
 let insects = {
   ant: {
     x: 0,
@@ -149,7 +150,7 @@ function render() {
   drawPlayer();
   drawToolBar();
   drawApple();
-  if (mushroom.available) drawMushroom();
+  if (food.mushroom.available) drawMushroom();
   if (insects.hasOwnProperty(insectName) && insects[insectName].available) drawInsect(insectName);
 }
 
@@ -233,7 +234,7 @@ function updatePlayerPosition() {
 }
 
 function playerCollisionCheck() {
-  if (player[0].x == apple.x && player[0].y == apple.y) {
+  if (player[0].x == food.apple.x && player[0].y == food.apple.y) {
     ateApple = true;
     score++;
     currentApplesEaten++;
@@ -246,7 +247,7 @@ function playerCollisionCheck() {
     } else {
       sizeUpAvailable = false;
     }
-  } else if (player[0].x == mushroom.x && player[0].y == mushroom.y && sizeUps >= 2) {
+  } else if (player[0].x == food.mushroom.x && player[0].y == food.mushroom.y && sizeUps >= 2) {
     ateMushroom = true;
     mushroom_score++;
     currentApplesEaten += 2;
@@ -352,29 +353,29 @@ function battleCheck(enemy) {
 }
 
 function createApple() {
-  apple.x = Math.floor(Math.random()*(width / apple.size)) * apple.size;
-  apple.y = Math.floor(Math.random()*(height / apple.size)) * apple.size;
+  food.apple.x = Math.floor(Math.random()*(width / food.apple.size)) * food.apple.size;
+  food.apple.y = Math.floor(Math.random()*(height / food.apple.size)) * food.apple.size;
   
-  player.forEach(el => { if (el.x == apple.x && el.y == apple.y) createApple(); });
+  player.forEach(el => { if (el.x == food.apple.x && el.y == food.apple.y) createApple(); });
   
   ateApple = false;
 }
 
 function drawApple() {
-  ctx.drawImage(apple_img, apple.x, apple.y);
+  ctx.drawImage(apple_img, food.apple.x, food.apple.y);
 }
 
 function createMushroom() {
-  mushroom.x = Math.floor(Math.random()*(width / apple.size)) * apple.size;
-  mushroom.y = Math.floor(Math.random()*(height / apple.size)) * apple.size;
+  food.mushroom.x = Math.floor(Math.random()*(width / food.apple.size)) * food.apple.size;
+  food.mushroom.y = Math.floor(Math.random()*(height / food.apple.size)) * food.apple.size;
   
-  player.forEach(el => { if (el.x == mushroom.x && el.y == mushroom.y) createMushroom() });
+  player.forEach(el => { if (el.x == food.mushroom.x && el.y == food.mushroom.y) createMushroom() });
   
   ateMushroom = false;
 }  
 
 function drawMushroom() {
-  ctx.drawImage(mushroom_img, mushroom.x, mushroom.y);
+  ctx.drawImage(mushroom_img, food.mushroom.x, food.mushroom.y);
 }
 
 function updateInsectName() {
