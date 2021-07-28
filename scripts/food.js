@@ -1,19 +1,40 @@
 //render
+function drawFood() {
+    availableFood.forEach(el => {
+        ctx.drawImage(food[el].image, food[el].x, food[el].y);
+    });
+}
 
 //update
 function updateFood() {
     availableFood.forEach(el => {
         if (food[el].eaten) {
-            food.apple.x = Math.floor(Math.random()*(width / food.apple.size)) * food.apple.size;
-            food.apple.y = Math.floor(Math.random()*(height / food.apple.size)) * food.apple.size;
+            (function create() {
+                food[el].x = Math.floor(Math.random()*(width / gridStep)) * gridStep;
+                food[el].y = Math.floor(Math.random()*(height / gridStep)) * gridStep;
+                player.forEach(part => { if (part.x === food[el].x && part.y === food[el].y)  create(); });
+                availableFood.forEach( item => {
+                    if (item.x === food[el].x && item.y === food[el].y) create();
+                });
+            })();
+            food[el].eaten = false;
         }
     });
 }
 
-
-//   food.apple.x = Math.floor(Math.random()*(width / food.apple.size)) * food.apple.size;
-//   food.apple.y = Math.floor(Math.random()*(height / food.apple.size)) * food.apple.size;
-  
-//   player.forEach(el => { if (el.x == food.apple.x && el.y == food.apple.y) createApple(); });
-  
-//   ateApple = false;
+function isFoodEaten() {
+    let res = false;
+    availableFood.forEach( item => {
+        if (player[0].x === food[item].x && player[0].y === food[item].y) {
+            food[item].eaten = true;
+            score += food[item].health;
+            currentApplesEaten += food[item].health;
+            if (injured) {
+                currentHealth += food[item].health;
+            }
+            res = true;
+            return
+        }
+    });
+    return res;
+}
