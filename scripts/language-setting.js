@@ -29,12 +29,14 @@ enBtn.addEventListener('click', (e) => {
     enBtn.classList.add('_selected');
     lang = 'en';
     displayText();
+    if (!inGame) displayMenu(lang);
 });
 ruBtn.addEventListener('click', (e) => {
     ruBtn.classList.add('_selected');
     enBtn.classList.remove('_selected');
     lang = 'ru';
     displayText();
+    if (!inGame) displayMenu(lang);
 });
 
 const langText = {

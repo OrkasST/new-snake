@@ -37,6 +37,9 @@ player_body.src = 'images/snake-body.png';
 
 const player_tail = new Image();
 player_tail.src = 'images/snake-tail.png';
+
+const start_game_button_image = new Image();
+start_game_button_image.src = 'images/menu-btn.png';
 	
 let loop;
 let intervalSpeed = 300;
@@ -141,7 +144,7 @@ let health = 8 + player.length - 1;
 let currentHealth = health;
 
 document.addEventListener("DOMContentLoaded", () => {
-  displayMenu(ctx, Cnv);
+  displayMenu(lang);
 });
 
 function game() {
