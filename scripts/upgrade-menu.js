@@ -68,7 +68,7 @@ minusScalesLvl.addEventListener('click', () => {
     scales--;
     points++;
     upgradePoints.innerText = points;
-    poisonLvl.innerText = poison;
+    scalesLvl.innerText = scales;
     if (scales === startScales) minusScalesLvl.classList.add('_hidden');
 });
 
