@@ -40,7 +40,6 @@ function displayMenu() {
 }
 
 document.addEventListener('click', (e) => {
-    console.log(e.target + "\nX:" + e.offsetX + "\nY:" + e.offsetY);
     if (!inGame &&
          e.target == Cnv &&
          e.offsetX >= startBtn.box.x &&

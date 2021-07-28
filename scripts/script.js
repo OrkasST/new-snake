@@ -272,7 +272,6 @@ function playerCollisionCheck() {
   } else if (direction != 'stand') {
     player.pop();
   }
-  // player.pop();
 }
 
 function drawToolBar() {
@@ -337,32 +336,6 @@ function battleCheck(enemy) {
     return false;
   }
 }
-
-// function createApple() {
-//   food.apple.x = Math.floor(Math.random()*(width / food.gridStep)) * food.gridStep;
-//   food.apple.y = Math.floor(Math.random()*(height / food.gridStep)) * food.gridStep;
-  
-//   player.forEach(el => { if (el.x == food.apple.x && el.y == food.apple.y) createApple(); });
-  
-//   ateApple = false;
-// }
-
-// function drawApple() {
-//   ctx.drawImage(food.apple.image, food.apple.x, food.apple.y);
-// }
-
-// function createMushroom() {
-//   food.mushroom.x = Math.floor(Math.random()*(width / food.gridStep)) * food.gridStep;
-//   food.mushroom.y = Math.floor(Math.random()*(height / food.gridStep)) * food.gridStep;
-  
-//   player.forEach(el => { if (el.x == food.mushroom.x && el.y == food.mushroom.y) createMushroom() });
-  
-//   ateMushroom = false;
-// }  
-
-// function drawMushroom() {
-//   ctx.drawImage(food.mushroom.image, food.mushroom.x, food.mushroom.y);
-// }
 
 function updateInsectName() {
   let names = [];
